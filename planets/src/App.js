@@ -36,19 +36,16 @@ function App() {
     console.log(planet);
   }, [planet]);
 
-
-
-
-
-  // console.log(planet);
-
   return (
     <>
-    <h1>THE PLANETS</h1>
     <nav>
-      <button className="name" onClick={(e) => getData("Mercury")}>MERCURY</button>
+    <h1>THE PLANETS</h1>
+      {/* <button className="name" onClick={(e) => getData("Mercury")}>MERCURY</button>
       <button className="name" onClick={(e) => getData("Venus")}>VENUS</button>
-      <button className="name" onClick={(e) => getData("Earth")}>EARTH</button>
+      <button className="name" onClick={(e) => getData("Earth")}>EARTH</button> */}
+      <button className="name" onClick={(e) => setPlanet("Mercury")}>MERCURY</button>
+      <button className="name" onClick={(e) => setPlanet("Venus")}>VENUS</button>
+      <button className="name" onClick={(e) => setPlanet("Earth")}>EARTH</button>
       <button className="name">MARS</button>
       <button className="name">JUPITER</button>
       <button className="name">SATURN</button>
@@ -62,16 +59,16 @@ function App() {
       <article className="info-box">
         <h2>{planet}</h2>
         <p className="planet-info">{planetInfo}</p>
-        <p className="link">Source: <a href="#" target="_blank">Wikipedia</a></p>
+        <p className="link">Source: <a href={link} target="_blank">Wikipedia</a></p>
         <div className="info-buttons" onClick={(e) => setPlanetInfo(overview)}>OVERVIEW</div>
         <div className="info-buttons" onClick={(e) => setPlanetInfo(internalStructure)}>INTERNAL STRUCTURE</div>
         <div className="info-buttons" onClick={(e) => setPlanetInfo(surfaceGeology)}>SURFACE GEOLOGY</div>
       </article>
       <section>
-        <div className="fact">ROTATION TIME</div>
-        <div className="fact">REVOLUTION TIME</div>
-        <div className="fact">RADIUS</div>
-        <div className="fact">AVERAGE TEMP.</div>
+        <div className="fact">ROTATION TIME<br/>{rotationTime}</div>
+        <div className="fact">REVOLUTION TIME<br/>{revolutionTime}</div>
+        <div className="fact">RADIUS<br/>{radius}</div>
+        <div className="fact">AVERAGE TEMP.<br/>{temperature}</div>
       </section>
     </div>
     </>
