@@ -1,11 +1,13 @@
 import './App.css';
+import React, { useState } from "react";
 
 function App() {
+  const [planet, setPlanet] = useState("Mercury");
   return (
     <>
     <h1>THE PLANETS</h1>
     <nav>
-      <button className="name">MERCURY</button>
+      <button className="name" onClick={(e) => {setPlanet("Mercury")}}>MERCURY</button>
       <button className="name">VENUS</button>
       <button className="name">EARTH</button>
       <button className="name">MARS</button>
