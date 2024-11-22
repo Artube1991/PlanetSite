@@ -43,6 +43,7 @@ function App() {
       {/* <button className="name" onClick={(e) => getData("Mercury")}>MERCURY</button>
       <button className="name" onClick={(e) => getData("Venus")}>VENUS</button>
       <button className="name" onClick={(e) => getData("Earth")}>EARTH</button> */}
+      <div className='button-row'>
       <button className="name" onClick={(e) => setPlanet("Mercury")}>MERCURY</button>
       <button className="name" onClick={(e) => setPlanet("Venus")}>VENUS</button>
       <button className="name" onClick={(e) => setPlanet("Earth")}>EARTH</button>
@@ -51,6 +52,7 @@ function App() {
       <button className="name">SATURN</button>
       <button className="name">URANUS</button>
       <button className="name">NEPTUNE</button>
+      </div>
     </nav>
     <div className="App">
       <div className="picture-box">
@@ -64,13 +66,14 @@ function App() {
         <div className="info-buttons" onClick={(e) => setPlanetInfo(internalStructure)}>INTERNAL STRUCTURE</div>
         <div className="info-buttons" onClick={(e) => setPlanetInfo(surfaceGeology)}>SURFACE GEOLOGY</div>
       </article>
+      </div>
       <section>
         <div className="fact">ROTATION TIME<br/>{rotationTime}</div>
         <div className="fact">REVOLUTION TIME<br/>{revolutionTime}</div>
         <div className="fact">RADIUS<br/>{radius}</div>
         <div className="fact">AVERAGE TEMP.<br/>{temperature}</div>
       </section>
-    </div>
+
     </>
   );
 }
