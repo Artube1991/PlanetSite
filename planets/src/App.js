@@ -39,7 +39,7 @@ function App() {
   return (
     <>
     <nav>
-    <h1>THE PLANETS</h1>
+    <div className="title">THE PLANETS</div>
       {/* <button className="name" onClick={(e) => getData("Mercury")}>MERCURY</button>
       <button className="name" onClick={(e) => getData("Venus")}>VENUS</button>
       <button className="name" onClick={(e) => getData("Earth")}>EARTH</button> */}
@@ -62,16 +62,16 @@ function App() {
         <h2>{planet}</h2>
         <p className="planet-info">{planetInfo}</p>
         <p className="link">Source: <a href={link} target="_blank">Wikipedia</a></p>
-        <div className="info-buttons" onClick={(e) => setPlanetInfo(overview)}>OVERVIEW</div>
-        <div className="info-buttons" onClick={(e) => setPlanetInfo(internalStructure)}>INTERNAL STRUCTURE</div>
-        <div className="info-buttons" onClick={(e) => setPlanetInfo(surfaceGeology)}>SURFACE GEOLOGY</div>
+        <div className="info-buttons" onClick={(e) => setPlanetInfo(overview)}>01   OVERVIEW</div>
+        <div className="info-buttons" onClick={(e) => setPlanetInfo(internalStructure)}>02   INTERNAL STRUCTURE</div>
+        <div className="info-buttons" onClick={(e) => setPlanetInfo(surfaceGeology)}>03   SURFACE GEOLOGY</div>
       </article>
       </div>
       <section>
-        <div className="fact">ROTATION TIME<br/>{rotationTime}</div>
-        <div className="fact">REVOLUTION TIME<br/>{revolutionTime}</div>
-        <div className="fact">RADIUS<br/>{radius}</div>
-        <div className="fact">AVERAGE TEMP.<br/>{temperature}</div>
+        <div className="fact">ROTATION TIME<p className="fact-text">{rotationTime}</p></div>
+        <div className="fact">REVOLUTION TIME<p className="fact-text">{revolutionTime}</p></div>
+        <div className="fact">RADIUS<p className="fact-text">{radius}</p></div>
+        <div className="fact">AVERAGE TEMP.<p className="fact-text">{temperature}</p></div>
       </section>
 
     </>

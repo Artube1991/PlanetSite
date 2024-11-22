@@ -6,6 +6,10 @@
   margin-right: 10%; */
 }
 
+.title {
+  padding: 0%;
+}
+
 .info-box {
   max-width: 30%;
   margin-left: 10%;
@@ -15,6 +19,8 @@
 nav {
   display: flex;
   flex-direction: row;
+  padding: 1%;
+  height: 100px;
 }
 
 .button-row {
@@ -22,3 +28,38 @@ nav {
   right: 1%;
 }
 
+.name {
+  border: none;
+  background-color: none;
+  width: 100px;
+  height: 50px;
+}
+
+.name:hover {
+  background-color: slateblue;
+  transition: background-color 0.7s;
+}
+
+.info-buttons {
+  border: solid 1px gray;
+  padding: 2%;
+  margin: 2% 0%;
+}
+
+.info-buttons:hover {
+  background-color: slateblue;
+  transition: background-color 0.7s;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.fact {
+  margin: 2%;
+  padding: 2%;
+  border: solid 1px grey;
+  max-width: 10%;
+}
