@@ -16,6 +16,7 @@ function App() {
   const [planetInfo, setPlanetInfo] = useState("");
   const [planetPictire, setPlanetPicture] = useState(`./media/${planet}-overview.jpg`);
 
+
   const getData = (plnt, tb) => {
     const planetData = data.filter((element) => element.planet === plnt);
     setPlanet(plnt);
@@ -44,7 +45,7 @@ function App() {
   const changePlanet = (plnt) => {
     setPlanet(plnt);
     setTab("overview");
-  }
+  };
 
   useEffect(() => {
     getData(planet, tab);
@@ -55,7 +56,7 @@ function App() {
   return (
     <>
     <nav>
-    <div className="title">THE PLANETS</div>
+    <div id="logo">THE PLANETS</div>
       <div className='button-row'>
       {/* <button className="name" onClick={(e) => setPlanet("Mercury")}>MERCURY</button>
       <button className="name" onClick={(e) => setPlanet("Venus")}>VENUS</button>
@@ -71,14 +72,14 @@ function App() {
       </div>
     </nav>
     <div className="App">
-      <div className="picture-box">
-        <img src={planetPictire} alt="fsdf" />
+      <div id="picture-box">
+        <img src={planetPictire} alt="Planet" />
       </div>
       <article className="info-box">
-        <h1>{planet}</h1>
+        <div className="title">{planet}</div>
         <p className="planet-info">{planetInfo}</p>
         <p className="link">Source: <a href={link} target="_blank">Wikipedia</a></p>
-        <div className="info-buttons" onClick={(e) => setTab("overview")}>01  OVERVIEW</div>
+        <div className="info-buttons" onClick={(e) => setTab("overview")}>01 OVERVIEW</div>
         <div className="info-buttons" onClick={(e) => setTab("internalStructure")}>02   INTERNAL STRUCTURE</div>
         <div className="info-buttons" onClick={(e) => setTab("surfaceGeology")}>03   SURFACE GEOLOGY</div>
       </article>

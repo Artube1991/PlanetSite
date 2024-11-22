@@ -1,14 +1,37 @@
+body {
+  background-image: url("../public/media/background.png");
+  color: whitesmoke
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  padding: 1%;
+  height: 50px;
+  border-bottom: 1px solid gray;
+}
+
+#logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
 .App {
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: 520px;
-  /* margin-left: 10%;
-  margin-right: 10%; */
+  margin: 1%;
 }
 
 .title {
-  padding: 0%;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+#picture-box {
+  opacity: 1;
+  transition: opacity 2s;
 }
 
 .info-box {
@@ -17,13 +40,6 @@
 }
 
 
-nav {
-  display: flex;
-  flex-direction: row;
-  padding: 1%;
-  height: 100px;
-}
-
 .button-row {
   position: absolute;
   right: 1%;
@@ -31,9 +47,11 @@ nav {
 
 .name {
   border: none;
-  background-color: none;
-  width: 100px;
+  background-color: rgba(0, 0, 0, 0);
+  color: whitesmoke;
+  width: 120px;
   height: 50px;
+  font-size: large;
 }
 
 .name:hover {
@@ -41,10 +59,20 @@ nav {
   transition: background-color 0.7s;
 }
 
+.planet-info {
+  height: 200px;
+  max-height: 200px;
+}
+
+a {
+  color: violet;
+}
+
 .info-buttons {
   border: solid 1px gray;
   padding: 2%;
   margin: 2% 0%;
+  font-weight: bold;
 }
 
 .info-buttons:hover {
@@ -59,8 +87,12 @@ section {
 }
 
 .fact {
-  margin: 2%;
-  padding: 2%;
+  margin: 1%;
+  padding: 1%;
   border: solid 1px grey;
-  max-width: 10%;
+  width: 15%;
+}
+
+.fact-text {
+  font-size: 40px;
 }
