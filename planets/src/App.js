@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import data from "./components/data";
 
 function App() {
-  const [planet, setPlanet] = useState("Mercury");
+  const [planet, setPlanet] = useState("Earth");
+  const [tab, setTab] = useState("overview");
   const [link, setLink] = useState("");
   const [overview, setOverview] = useState("");
   const [internalStructure, setInternalStructure] = useState("");
@@ -12,10 +13,11 @@ function App() {
   const [revolutionTime, setRevolutionTime] = useState("");
   const [radius, setRadius] = useState("");
   const [temperature, setTemperature] = useState("");
-  const [planetInfo, setPlanetInfo] = useState(overview);
+  const [planetInfo, setPlanetInfo] = useState("");
+  const [planetPictire, setPlanetPicture] = useState(`./media/${planet}-overview.jpg`);
 
-  const getData = (plnt) => {
-    let planetData = data.filter((element) => element.planet === plnt);
+  const getData = (plnt, tb) => {
+    const planetData = data.filter((element) => element.planet === plnt);
     setPlanet(plnt);
     setLink(planetData[0].link);
     setOverview(planetData[0].overview);
@@ -26,27 +28,41 @@ function App() {
     setRadius(planetData[0].radius);
     setTemperature(planetData[0].temperature);
     setPlanetInfo(planetData[0].overview);
-    console.log(planetData);
-    console.log(planetInfo);
+
+    changeTab(tb);
   };
 
+  const changeTab = (tab) => {
+    if (tab === "internalStructure") {
+      setPlanetInfo(internalStructure);
+    } else if (tab === "surfaceGeology") {
+      setPlanetInfo(surfaceGeology);
+    };
+    setPlanetPicture(`./media/${planet}-${tab}.jpg`);
+  };
+
+  const changePlanet = (plnt) => {
+    setPlanet(plnt);
+    setTab("overview");
+  }
+
   useEffect(() => {
-    getData(planet);
+    getData(planet, tab);
     console.log(overview);
     console.log(planet);
-  }, [planet]);
+  }, [planet, tab]);
 
   return (
     <>
     <nav>
     <div className="title">THE PLANETS</div>
-      {/* <button className="name" onClick={(e) => getData("Mercury")}>MERCURY</button>
-      <button className="name" onClick={(e) => getData("Venus")}>VENUS</button>
-      <button className="name" onClick={(e) => getData("Earth")}>EARTH</button> */}
       <div className='button-row'>
-      <button className="name" onClick={(e) => setPlanet("Mercury")}>MERCURY</button>
+      {/* <button className="name" onClick={(e) => setPlanet("Mercury")}>MERCURY</button>
       <button className="name" onClick={(e) => setPlanet("Venus")}>VENUS</button>
-      <button className="name" onClick={(e) => setPlanet("Earth")}>EARTH</button>
+      <button className="name" onClick={(e) => setPlanet("Earth")}>EARTH</button> */}
+      <button className="name" onClick={(e) => changePlanet("Mercury")}>MERCURY</button>
+      <button className="name" onClick={(e) => changePlanet("Venus")}>VENUS</button>
+      <button className="name" onClick={(e) => changePlanet("Earth")}>EARTH</button>
       <button className="name">MARS</button>
       <button className="name">JUPITER</button>
       <button className="name">SATURN</button>
@@ -56,15 +72,15 @@ function App() {
     </nav>
     <div className="App">
       <div className="picture-box">
-        <img src="./media/test.jpg" alt="fsdf" />
+        <img src={planetPictire} alt="fsdf" />
       </div>
       <article className="info-box">
-        <h2>{planet}</h2>
+        <h1>{planet}</h1>
         <p className="planet-info">{planetInfo}</p>
         <p className="link">Source: <a href={link} target="_blank">Wikipedia</a></p>
-        <div className="info-buttons" onClick={(e) => setPlanetInfo(overview)}>01   OVERVIEW</div>
-        <div className="info-buttons" onClick={(e) => setPlanetInfo(internalStructure)}>02   INTERNAL STRUCTURE</div>
-        <div className="info-buttons" onClick={(e) => setPlanetInfo(surfaceGeology)}>03   SURFACE GEOLOGY</div>
+        <div className="info-buttons" onClick={(e) => setTab("overview")}>01  OVERVIEW</div>
+        <div className="info-buttons" onClick={(e) => setTab("internalStructure")}>02   INTERNAL STRUCTURE</div>
+        <div className="info-buttons" onClick={(e) => setTab("surfaceGeology")}>03   SURFACE GEOLOGY</div>
       </article>
       </div>
       <section>
