@@ -76,9 +76,9 @@ const clicking = () => {
       <button className="mobile-info-buttons" onClick={(e) => setTab("surfaceGeology")}>SURFACE GEOLOGY</button>
       <i id="button-mobile" class="fa-solid fa-bars" onClick={clicking}></i>
       <ul className="menu-mobile">
-        <li className="menu-item">MERCURY</li>
-        <li className="menu-item">VENUS</li>
-        <li className="menu-item">EARTH</li>
+        <li className="menu-item" onClick={(e) => changePlanet("Mercury")}>MERCURY</li>
+        <li className="menu-item" onClick={(e) => changePlanet("Venus")}>VENUS</li>
+        <li className="menu-item" onClick={(e) => changePlanet("Earth")}>EARTH</li>
       </ul>
 </nav>
     <nav>
