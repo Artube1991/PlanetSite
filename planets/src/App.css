@@ -96,3 +96,29 @@ section {
 .fact-text {
   font-size: 40px;
 }
+
+i {
+  font-size: 50px;
+  color: white;
+}
+
+/* BUTTON EFFECTS */
+#button-mobile {
+  position: fixed;
+  right: 2%;
+}
+
+.menu-mobile {
+  line-height: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 100px;
+  right: 2%;
+  opacity: 0.5;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

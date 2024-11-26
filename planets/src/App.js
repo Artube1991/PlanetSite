@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
+
 import data from "./components/data";
 
 function App() {
@@ -15,6 +16,20 @@ function App() {
   const [temperature, setTemperature] = useState("");
   const [planetInfo, setPlanetInfo] = useState("");
   const [planetPictire, setPlanetPicture] = useState(`./media/${planet}-overview.jpg`);
+  
+  const menuMobile = document.querySelector(".menu-mobile");
+  const [showMenu, setShowMenu] = useState(false);
+
+const clicking = () => {
+  if (showMenu === false) {
+    setShowMenu(true);
+    menuMobile.setAttribute("style", "overflow: visible; line-height: 1.2; transition: line-height 1s");
+    // menuMobile.setAttribute("style", "transition: visibility 0.5s")
+  } else if (showMenu === true) {
+    setShowMenu(false);
+    menuMobile.setAttribute("style", "overflow: hidden; line-height: 0; transition: line-height 1s, overflow 1s");
+  }
+};
 
 
   const getData = (plnt, tb) => {
@@ -55,6 +70,17 @@ function App() {
 
   return (
     <>
+    <nav className="mobile-nav">
+      <button className="mobile-info-buttons" onClick={(e) => setTab("overview")}>OVERVIEW</button>
+      <button className="mobile-info-buttons" onClick={(e) => setTab("internalStructure")}>INTERNAL STRUCTURE</button>
+      <button className="mobile-info-buttons" onClick={(e) => setTab("surfaceGeology")}>SURFACE GEOLOGY</button>
+      <i id="button-mobile" class="fa-solid fa-bars" onClick={clicking}></i>
+      <ul className="menu-mobile">
+        <li className="menu-item">MERCURY</li>
+        <li className="menu-item">VENUS</li>
+        <li className="menu-item">EARTH</li>
+      </ul>
+</nav>
     <nav>
     <div id="logo">THE PLANETS</div>
       <div className='button-row'>
@@ -90,7 +116,6 @@ function App() {
         <div className="fact">RADIUS<p className="fact-text">{radius}</p></div>
         <div className="fact">AVERAGE TEMP.<p className="fact-text">{temperature}</p></div>
       </section>
-
     </>
   );
 }
