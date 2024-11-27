@@ -3,17 +3,21 @@ body {
   color: whitesmoke;
 }
 
+.menu-mobile, #mobile-logo, .mobile-nav {
+  display: none;
+}
+
 .main-bar {
   display: flex;
   flex-direction: row;
   padding: 1%;
-  height: 50px;
   border-bottom: 1px solid gray;
 }
 
 .logo {
   font-size: 30px;
   font-weight: bold;
+  opacity: 0.5;
 }
 
 .App {
@@ -39,7 +43,6 @@ body {
   margin-left: 10%;
 }
 
-
 .button-row {
   position: absolute;
   right: 1%;
@@ -49,8 +52,8 @@ body {
   border: none;
   background-color: rgba(0, 0, 0, 0);
   color: whitesmoke;
-  width: 120px;
   height: 50px;
+  width: 120px;
   font-size: large;
 }
 
@@ -113,8 +116,11 @@ body {
   display: none;
 }
 
-.logo {
+#mobile-logo {
+  display: block;
   text-align: center;
+  opacity: 0.5;
+  user-select: none;
 }
 
 .App, .info-box {
@@ -154,7 +160,7 @@ img {
 }
 
 i {
-  font-size: 50px;
+  font-size: 40px;
   color: white;
   padding: 0.3%;
 }
@@ -166,21 +172,39 @@ i:active {
 #button-mobile {
   position: fixed;
   right: 2%;
+  top: 0;
 }
 
 .menu-mobile {
+  display: block;
   line-height: 0;
-  overflow: hidden;
+  visibility: hidden;
   position: fixed;
-  top: 100px;
-  right: 2%;
-  opacity: 0.5;
+  background-color: gray;
+  width: 100%;
+  /* top: -3%; */
+  height: auto;
+  opacity: 0.85;
+  margin: 0;
+
+}
+
+.menu-item {
+  color: white;
+  font-size: 40px;
+  list-style-type: none;
+  -webkit-text-stroke: 1px whitesmoke;
+}
+
+.menu-item:hover {
+  background-color: slateblue;
+  width: 70%;
 }
 
 .mobile-nav {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-items: center;
   margin: 5%;
 }
 

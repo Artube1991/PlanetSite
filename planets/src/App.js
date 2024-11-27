@@ -18,16 +18,19 @@ function App() {
   const [planetPictire, setPlanetPicture] = useState(`./media/${planet}-overview.jpg`);
   
   const menuMobile = document.querySelector(".menu-mobile");
+  const icon = document.getElementsByTagName("i")[0];
   const [showMenu, setShowMenu] = useState(false);
 
 const clicking = () => {
   if (showMenu === false) {
     setShowMenu(true);
-    menuMobile.setAttribute("style", "overflow: visible; line-height: 1.2; transition: line-height 1s");
-    // menuMobile.setAttribute("style", "transition: visibility 0.5s")
+    menuMobile.setAttribute("style", "visibility: visible; overflow: visible; line-height: 1.5; transition: line-height 1s");
+    icon.setAttribute("class", "fa-solid fa-xmark");
+    
   } else if (showMenu === true) {
     setShowMenu(false);
-    menuMobile.setAttribute("style", "overflow: hidden; line-height: 0; transition: line-height 1s, overflow 1s");
+    menuMobile.setAttribute("style", "visibility: hidden; overflow: hidden; line-height: 0; transition: line-height 1s, visibility 1s, overflow 1s");
+    icon.setAttribute("class", "fa-solid fa-bars");
   }
 };
 
@@ -70,17 +73,22 @@ const clicking = () => {
 
   return (
     <>
-    <div className="logo">THE PLANETS</div>
+    <ul className="menu-mobile">
+        <li className="menu-item" onClick={(e) => changePlanet("Mercury")}>MERCURY</li>
+        <li className="menu-item" onClick={(e) => changePlanet("Venus")}>VENUS</li>
+        <li className="menu-item" onClick={(e) => changePlanet("Earth")}>EARTH</li>
+        <li className="menu-item">MARS</li>
+        <li className="menu-item">JUPITER</li>
+        <li className="menu-item">SATURN</li>
+        <li className="menu-item">URANUS</li>
+        <li className="menu-item">NEPTUNE</li>
+      </ul>
+    <div className="logo" id="mobile-logo">THE PLANETS</div>
     <nav className="mobile-nav">
       <button className="mobile-info-buttons" onClick={(e) => setTab("overview")}>OVERVIEW</button>
       <button className="mobile-info-buttons" onClick={(e) => setTab("internalStructure")}>INTERNAL STRUCTURE</button>
       <button className="mobile-info-buttons" onClick={(e) => setTab("surfaceGeology")}>SURFACE GEOLOGY</button>
       <i id="button-mobile" class="fa-solid fa-bars" onClick={clicking}></i>
-      <ul className="menu-mobile">
-        <li className="menu-item" onClick={(e) => changePlanet("Mercury")}>MERCURY</li>
-        <li className="menu-item" onClick={(e) => changePlanet("Venus")}>VENUS</li>
-        <li className="menu-item" onClick={(e) => changePlanet("Earth")}>EARTH</li>
-      </ul>
 </nav>
     <nav className="main-bar">
     <div className="logo">THE PLANETS</div>
