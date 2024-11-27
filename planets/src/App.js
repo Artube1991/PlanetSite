@@ -70,6 +70,7 @@ const clicking = () => {
 
   return (
     <>
+    <div className="logo">THE PLANETS</div>
     <nav className="mobile-nav">
       <button className="mobile-info-buttons" onClick={(e) => setTab("overview")}>OVERVIEW</button>
       <button className="mobile-info-buttons" onClick={(e) => setTab("internalStructure")}>INTERNAL STRUCTURE</button>
@@ -81,8 +82,8 @@ const clicking = () => {
         <li className="menu-item" onClick={(e) => changePlanet("Earth")}>EARTH</li>
       </ul>
 </nav>
-    <nav>
-    <div id="logo">THE PLANETS</div>
+    <nav className="main-bar">
+    <div className="logo">THE PLANETS</div>
       <div className='button-row'>
       {/* <button className="name" onClick={(e) => setPlanet("Mercury")}>MERCURY</button>
       <button className="name" onClick={(e) => setPlanet("Venus")}>VENUS</button>

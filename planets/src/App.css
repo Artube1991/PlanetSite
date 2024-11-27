@@ -3,7 +3,7 @@ body {
   color: whitesmoke
 }
 
-nav {
+.main-bar {
   display: flex;
   flex-direction: row;
   padding: 1%;
@@ -11,7 +11,7 @@ nav {
   border-bottom: 1px solid gray;
 }
 
-#logo {
+.logo {
   font-size: 30px;
   font-weight: bold;
 }
@@ -97,12 +97,45 @@ section {
   font-size: 40px;
 }
 
+
+/* BUTTON EFFECTS */
+@media only screen and (max-width: 500px) {
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-bar {
+  display: none;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 500px;
+}
+
+img {
+  width: 250px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
 i {
   font-size: 50px;
   color: white;
+  padding: 0.3%;
 }
 
-/* BUTTON EFFECTS */
+i:active {
+  background-color: lightskyblue;
+}
+
 #button-mobile {
   position: fixed;
   right: 2%;
@@ -137,4 +170,5 @@ i {
 
 .mobile-info-buttons:active {
   border-bottom: 5px solid lightskyblue;
+}
 }
