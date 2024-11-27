@@ -1,6 +1,6 @@
 body {
   background-image: url("../public/media/background.png");
-  color: whitesmoke
+  color: whitesmoke;
 }
 
 .main-bar {
@@ -20,7 +20,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 520px;
+  height: 510px;
   margin: 1%;
 }
 
@@ -104,26 +104,53 @@ section {
 body {
   display: flex;
   flex-direction: column;
+  justify-items: center;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.main-bar {
+.main-bar, .info-buttons {
   display: none;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  max-width: 500px;
+.logo {
+  text-align: center;
 }
 
-img {
-  width: 250px;
+.App, .info-box {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin: 2%;
+}
+
+.planet-info {
+  height: auto;
 }
 
 section {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-bottom: 3%;
+}
+
+.fact {
+  width: 70%;
+  height: 100%;
+  text-align: center;
+  padding: 3%;
+}
+
+.fact-text {
+  line-height: 0.05;
+}
+
+img {
+  width: 250px;
 }
 
 i {
@@ -154,6 +181,7 @@ i:active {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 5%;
 }
 
 .mobile-info-buttons {
