@@ -120,10 +120,10 @@ const clicking = () => {
       </article>
       </div>
       <section>
-        <div className="fact">ROTATION TIME<p className="fact-text">{rotationTime}</p></div>
-        <div className="fact">REVOLUTION TIME<p className="fact-text">{revolutionTime}</p></div>
-        <div className="fact">RADIUS<p className="fact-text">{radius}</p></div>
-        <div className="fact">AVERAGE TEMP.<p className="fact-text">{temperature}</p></div>
+        <div className="fact"><div>ROTATION TIME</div><p className="fact-text">{rotationTime}</p></div>
+        <div className="fact"><div>REVOLUTION TIME</div><p className="fact-text">{revolutionTime}</p></div>
+        <div className="fact"><div>RADIUS</div><p className="fact-text">{radius}</p></div>
+        <div className="fact"><div>AVERAGE TEMP.</div><p className="fact-text">{temperature}</p></div>
       </section>
     </>
   );
