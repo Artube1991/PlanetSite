@@ -99,9 +99,9 @@ const clicking = () => {
       <button className="name" onClick={(e) => changePlanet("Mercury")}>MERCURY</button>
       <button className="name" onClick={(e) => changePlanet("Venus")}>VENUS</button>
       <button className="name" onClick={(e) => changePlanet("Earth")}>EARTH</button>
-      <button className="name">MARS</button>
-      <button className="name">JUPITER</button>
-      <button className="name">SATURN</button>
+      <button className="name" onClick={(e) => changePlanet("Mars")}>MARS</button>
+      <button className="name" onClick={(e) => changePlanet("Jupiter")}>JUPITER</button>
+      <button className="name" onClick={(e) => changePlanet("Saturn")}>SATURN</button>
       <button className="name">URANUS</button>
       <button className="name">NEPTUNE</button>
       </div>
