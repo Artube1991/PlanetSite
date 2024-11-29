@@ -77,11 +77,11 @@ const clicking = () => {
         <li className="menu-item" onClick={(e) => changePlanet("Mercury")}>MERCURY</li>
         <li className="menu-item" onClick={(e) => changePlanet("Venus")}>VENUS</li>
         <li className="menu-item" onClick={(e) => changePlanet("Earth")}>EARTH</li>
-        <li className="menu-item">MARS</li>
-        <li className="menu-item">JUPITER</li>
-        <li className="menu-item">SATURN</li>
-        <li className="menu-item">URANUS</li>
-        <li className="menu-item">NEPTUNE</li>
+        <li className="menu-item" onClick={(e) => changePlanet("Mars")}>MARS</li>
+        <li className="menu-item" onClick={(e) => changePlanet("Jupiter")}>JUPITER</li>
+        <li className="menu-item" onClick={(e) => changePlanet("Saturn")}>SATURN</li>
+        <li className="menu-item" onClick={(e) => changePlanet("Uranus")}>URANUS</li>
+        <li className="menu-item" onClick={(e) => changePlanet("Neptune")}>NEPTUNE</li>
       </ul>
     <div className="logo" id="mobile-logo">THE PLANETS</div>
     <nav className="mobile-nav">
@@ -102,8 +102,8 @@ const clicking = () => {
       <button className="name" onClick={(e) => changePlanet("Mars")}>MARS</button>
       <button className="name" onClick={(e) => changePlanet("Jupiter")}>JUPITER</button>
       <button className="name" onClick={(e) => changePlanet("Saturn")}>SATURN</button>
-      <button className="name">URANUS</button>
-      <button className="name">NEPTUNE</button>
+      <button className="name" onClick={(e) => changePlanet("Uranus")}>URANUS</button>
+      <button className="name" onClick={(e) => changePlanet("Neptune")}>NEPTUNE</button>
       </div>
     </nav>
     <div className="App">
