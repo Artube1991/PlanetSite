@@ -74,7 +74,7 @@ const data = [
     "link": "https://en.wikipedia.org/wiki/Uranus",
     "overview": "Uranus is the seventh planet from the Sun. It is a gaseous cyan-coloured ice giant. Most of the planet is made of water, ammonia, and methane in a supercritical phase of matter, which astronomy calls 'ice' or volatiles. The planet's atmosphere has a complex layered cloud structure and has the lowest minimum temperature (49 K (−224 °C; −371 °F)) of all the Solar System's planets.",
     "internalStructure": "Uranus's mass is roughly 14.5 times that of Earth, making it the least massive of the giant planets. Its diameter is slightly larger than Neptune's at roughly four times that of Earth. A resulting density of 1.27 g/cm3 makes Uranus the second least dense planet, after Saturn.",
-    "surfaceGeology": "The fluid interior structure of Uranus means that it has no solid surface. The gaseous atmosphere gradually transitions into the internal liquid layers.[17] For the sake of convenience, a revolving oblate spheroid set at the point at which atmospheric pressure equals 1 bar (100 kPa) is conditionally designated as a 'surface'.",
+    "surfaceGeology": "The fluid interior structure of Uranus means that it has no solid surface. The gaseous atmosphere gradually transitions into the internal liquid layers. For the sake of convenience, a revolving oblate spheroid set at the point at which atmospheric pressure equals 1 bar (100 kPa) is conditionally designated as a 'surface'.",
     "rotationTime": "369.66 d",
     "revolutionTime": "84.0205 y",
     "radius": "25,362±7 km",

@@ -17,11 +17,11 @@ function App() {
   const [planetInfo, setPlanetInfo] = useState("");
   const [planetPictire, setPlanetPicture] = useState(`./media/${planet}-overview.jpg`);
   
-  const menuMobile = document.querySelector(".mobile-menu");
+  const menuMobile = document.querySelector(".menu-mobile");
   const icon = document.getElementsByTagName("i")[0];
   const [showMenu, setShowMenu] = useState(false);
 
-const menuClicking = () => {
+const clicking = () => {
   if (showMenu === false) {
     setShowMenu(true);
     menuMobile.setAttribute("style", "visibility: visible; overflow: visible; line-height: 1.5; transition: line-height 1s");
@@ -33,6 +33,7 @@ const menuClicking = () => {
     icon.setAttribute("class", "fa-solid fa-bars");
   }
 };
+
 
   const getData = (plnt, tb) => {
     const planetData = data.filter((element) => element.planet === plnt);
@@ -66,11 +67,13 @@ const menuClicking = () => {
 
   useEffect(() => {
     getData(planet, tab);
+    console.log(overview);
+    console.log(planet);
   }, [planet, tab]);
 
   return (
     <>
-    <ul className="mobile-menu">
+    <ul className="menu-mobile">
         <li className="menu-item" onClick={(e) => changePlanet("Mercury")}>MERCURY</li>
         <li className="menu-item" onClick={(e) => changePlanet("Venus")}>VENUS</li>
         <li className="menu-item" onClick={(e) => changePlanet("Earth")}>EARTH</li>
@@ -85,39 +88,42 @@ const menuClicking = () => {
       <button className="mobile-info-buttons" onClick={(e) => setTab("overview")}>OVERVIEW</button>
       <button className="mobile-info-buttons" onClick={(e) => setTab("internalStructure")}>INTERNAL STRUCTURE</button>
       <button className="mobile-info-buttons" onClick={(e) => setTab("surfaceGeology")}>SURFACE GEOLOGY</button>
-      <i id="button-mobile" class="fa-solid fa-bars" onClick={menuClicking}></i>
+      <i id="button-mobile" class="fa-solid fa-bars" onClick={clicking}></i>
 </nav>
-    <nav className="main-nav">
+    <nav className="main-bar">
     <div className="logo">THE PLANETS</div>
       <div className='button-row'>
-      <button className="planet-name" onClick={(e) => changePlanet("Mercury")}>MERCURY</button>
-      <button className="planet-name" onClick={(e) => changePlanet("Venus")}>VENUS</button>
-      <button className="planet-name" onClick={(e) => changePlanet("Earth")}>EARTH</button>
-      <button className="planet-name" onClick={(e) => changePlanet("Mars")}>MARS</button>
-      <button className="planet-name" onClick={(e) => changePlanet("Jupiter")}>JUPITER</button>
-      <button className="planet-name" onClick={(e) => changePlanet("Saturn")}>SATURN</button>
-      <button className="planet-name" onClick={(e) => changePlanet("Uranus")}>URANUS</button>
-      <button className="planet-name" onClick={(e) => changePlanet("Neptune")}>NEPTUNE</button>
+      {/* <button className="name" onClick={(e) => setPlanet("Mercury")}>MERCURY</button>
+      <button className="name" onClick={(e) => setPlanet("Venus")}>VENUS</button>
+      <button className="name" onClick={(e) => setPlanet("Earth")}>EARTH</button> */}
+      <button className="name" onClick={(e) => changePlanet("Mercury")}>MERCURY</button>
+      <button className="name" onClick={(e) => changePlanet("Venus")}>VENUS</button>
+      <button className="name" onClick={(e) => changePlanet("Earth")}>EARTH</button>
+      <button className="name" onClick={(e) => changePlanet("Mars")}>MARS</button>
+      <button className="name" onClick={(e) => changePlanet("Jupiter")}>JUPITER</button>
+      <button className="name" onClick={(e) => changePlanet("Saturn")}>SATURN</button>
+      <button className="name" onClick={(e) => changePlanet("Uranus")}>URANUS</button>
+      <button className="name" onClick={(e) => changePlanet("Neptune")}>NEPTUNE</button>
       </div>
     </nav>
-    <div className="main">
+    <div className="App">
       <div id="picture-box">
         <img src={planetPictire} alt="Planet" />
       </div>
       <article className="info-box">
-        <div className="planet-title">{planet}</div>
+        <div className="title">{planet}</div>
         <p className="planet-info">{planetInfo}</p>
-        <p className="planet-link">Source: <a href={link} target="_blank">Wikipedia</a></p>
+        <p className="link">Source: <a href={link} target="_blank">Wikipedia</a></p>
         <div className="info-buttons" onClick={(e) => setTab("overview")}>01 OVERVIEW</div>
-        <div className="info-buttons" onClick={(e) => setTab("internalStructure")}>02 INTERNAL STRUCTURE</div>
-        <div className="info-buttons" onClick={(e) => setTab("surfaceGeology")}>03 SURFACE GEOLOGY</div>
+        <div className="info-buttons" onClick={(e) => setTab("internalStructure")}>02   INTERNAL STRUCTURE</div>
+        <div className="info-buttons" onClick={(e) => setTab("surfaceGeology")}>03   SURFACE GEOLOGY</div>
       </article>
       </div>
       <section>
-        <div className="planet-fact"><div>ROTATION TIME</div><p className="planet-fact-text">{rotationTime}</p></div>
-        <div className="planet-fact"><div>REVOLUTION TIME</div><p className="planet-fact-text">{revolutionTime}</p></div>
-        <div className="planet-fact"><div>RADIUS</div><p className="planet-fact-text">{radius}</p></div>
-        <div className="planet-fact"><div>AVERAGE TEMP.</div><p className="planet-fact-text">{temperature}</p></div>
+        <div className="fact"><div>ROTATION TIME</div><p className="fact-text">{rotationTime}</p></div>
+        <div className="fact"><div>REVOLUTION TIME</div><p className="fact-text">{revolutionTime}</p></div>
+        <div className="fact"><div>RADIUS</div><p className="fact-text">{radius}</p></div>
+        <div className="fact"><div>AVERAGE TEMP.</div><p className="fact-text">{temperature}</p></div>
       </section>
     </>
   );

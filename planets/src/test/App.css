@@ -4,12 +4,11 @@ body {
   overflow-x: hidden;
 }
 
-/* NAVIGATION BAR */
-.mobile-menu, #mobile-logo, .mobile-nav {
+.menu-mobile, #mobile-logo, .mobile-nav {
   display: none;
 }
 
-.main-nav {
+.main-bar {
   display: flex;
   flex-direction: row;
   padding: 1%;
@@ -20,11 +19,9 @@ body {
   font-size: 30px;
   font-weight: bold;
   opacity: 0.5;
-  user-select: none;
 }
 
-/* THE MAIN BOX */
-.main {
+.App {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -32,7 +29,7 @@ body {
   margin: 1%;
 }
 
-.planet-title {
+.title {
   font-size: 70px;
   font-weight: bold;
 }
@@ -52,7 +49,7 @@ body {
   right: 1%;
 }
 
-.planet-name {
+.name {
   border: none;
   background-color: rgba(0, 0, 0, 0);
   color: whitesmoke;
@@ -61,7 +58,7 @@ body {
   font-size: large;
 }
 
-.planet-name:hover {
+.name:hover {
   background-color: slateblue;
   transition: background-color 0.7s;
 }
@@ -87,14 +84,13 @@ a {
   transition: background-color 0.7s;
 }
 
-/* THE SECTION BELOW */
 section {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.planet-fact {
+.fact {
   margin: 1%;
   padding: 1%;
   border: solid 1px grey;
@@ -102,12 +98,12 @@ section {
   max-height: 160px;
 }
 
-.planet-fact-text {
+.fact-text {
   font-size: 40px;
 }
 
 
-/*! MOBILE DESIGN AND BUTTON EFFECTS !*/
+/* MOBILE DESIGN AND BUTTON EFFECTS */
 @media only screen and (max-width: 500px) {
 
 body {
@@ -118,7 +114,7 @@ body {
   overflow-x: hidden;
 }
 
-.main-nav, .info-buttons {
+.main-bar, .info-buttons {
   display: none;
 }
 
@@ -126,9 +122,10 @@ body {
   display: block;
   text-align: center;
   opacity: 0.5;
+  user-select: none;
 }
 
-.main, .info-box {
+.App, .info-box {
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -149,7 +146,7 @@ section {
   margin-bottom: 3%;
 }
 
-.planet-fact {
+.fact {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -160,7 +157,7 @@ section {
   color: whitesmoke;
 }
 
-.planet-fact-text {
+.fact-text {
   position: absolute;
   right: 20%;
   color: whitesmoke;
@@ -171,7 +168,6 @@ img {
   width: 250px;
 }
 
-/* MENU */
 i {
   font-size: 40px;
   color: white;
@@ -188,7 +184,7 @@ i:active {
   top: 0;
 }
 
-.mobile-menu {
+.menu-mobile {
   display: block;
   line-height: 0;
   visibility: hidden;
